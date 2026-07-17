@@ -67,31 +67,3 @@ char	*ft_strjoin(char *s1, char *s2)
 	res[i] = '\0';
 	return (free(s1), res);
 }
-// int main a copier coller dans un fichier main.c
-// il faut apres creer un fichier test.txt ou on met des trucs dedans.
-// 
-// #include <fcntl.h>
-// #include <stdio.h>
-// #include "get_next_line.h"
-
-// int	main(void)
-// {
-// 	int		fd;
-// 	char	*line;
-
-// 	fd = open("test.txt", O_RDONLY);
-// 	if (fd < 0)
-// 	{
-// 		printf("Nuh Uhh not gonna opennnneuuhhh");
-// 		return (1);
-// 	}
-// 	line = get_next_line(fd);
-// 	while (line != NULL)
-// 	{
-// 		printf("salut %s\n", line);
-// 		free(line);
-// 		line = get_next_line(fd);
-// 	}
-// 	close(fd);
-// 	return (0);
-// }
