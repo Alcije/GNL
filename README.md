@@ -24,7 +24,7 @@ python3 -c 'print("a" * 50000, end="")' > tests_gnl/big.txt
 
 2. Compiler avec différents BUFFER_SIZE
 
-Pense à vérifier si tes .c sont à la racine ou dans un dossier src/.
+Penser à vérifier si les .c sont à la racine ou dans un dossier src/.
 
 ## BUFFER_SIZE = 1 (le classique pour tout casser)
 cc -Wall -Wextra -Werror -D BUFFER_SIZE=1 get_next_line.c get_next_line_utils.c main.c -o gnl
@@ -38,7 +38,7 @@ cc -Wall -Wextra -Werror -D BUFFER_SIZE=100000 get_next_line.c get_next_line_uti
 
 3. Lancer les tests
 
-Si ton main.c prend le nom du fichier en argument (argv[1]) :
+Si le main.c prend le nom du fichier en argument (argv[1]) :
 
 ./gnl tests_gnl/empty.txt
 ./gnl tests_gnl/one_no_nl.txt
@@ -59,7 +59,7 @@ Avec Valgrind :
 valgrind --leak-check=full --show-leak-kinds=all ./gnl tests_gnl/multi.txt
 
 
-Ou si tu es sur Mac / sans Valgrind, compile avec -fsanitize=address :
+Si sur Mac / sans Valgrind, compiler avec -fsanitize=address :
 
 cc -Wall -Wextra -Werror -fsanitize=address -g -D BUFFER_SIZE=42 get_next_line.c get_next_line_utils.c main.c -o gnl
 ./gnl tests_gnl/multi.txt
